@@ -82,8 +82,13 @@ public class Studente {
                     throw new Exception("\nTroppi spazi inseriti.");
                 }
                 if(tmp[i].charAt(0) >= 65 && tmp[i].charAt(0) <= 90){
-                    for(int j = 1; j < tmp[i].length(); j++){
-                        if(!(tmp[i].charAt(j) >= 97 && tmp[i].charAt(j) <= 122)){
+                    for(int j = 1; j < tmp[i].length(); j++) {
+                        if (tmp[i].charAt(j) == 39) {
+                            checkApostrofo(tmp[i], j);  //chiamo il metodo per controllare che dopo l'apostrofo ci siano una lettera maiuscola e minimo una minuscola
+                            j++;  //incremento il counter perché ho già controllato che la lettera dopo l'apostrofo sia maiuscola
+                        }else if(!(tmp[i].charAt(tmp[i].length() - 1) == 130 || tmp[i].charAt(tmp[i].length() - 1) == 133 || tmp[i].charAt(tmp[i].length() - 1) == 141 || tmp[i].charAt(tmp[i].length() - 1) == 149 || tmp[i].charAt(tmp[i].length() - 1) == 151)){
+
+                        }else if(!(tmp[i].charAt(j) >= 97 && tmp[i].charAt(j) <= 122)){
                             throw new Exception("\nLe lettere dopo la prima non sono minuscole.");
                         }
                     }
@@ -98,5 +103,14 @@ public class Studente {
             throw new Exception(e.getMessage());
         }
         return true;
+    }
+
+    private void checkApostrofo(String s, int j) throws Exception{
+        if(s.charAt(s.length() - 1) == 39){
+            throw new Exception("\nNon devono esserci spazi dopo l'apostrofo.");
+        }
+        if(!(s.charAt(j + 1) >= 65 && s.charAt(j) <= 90)){
+            throw new Exception("\nDopo l'apostrofo la lettera deve essere maiuscola.");
+        }
     }
 }
