@@ -1,7 +1,7 @@
 package PoligoniRegolariEreditari;
 
 public class Pentagono extends PoligonoRegolare{
-    public Pentagono(double lato) {
+    public Pentagono(double lato) throws Exception {
         super(5, lato);
     }
 
@@ -15,5 +15,10 @@ public class Pentagono extends PoligonoRegolare{
 
     public double apotema(){
         return getLato() * 0.688; //0.688 = numero fisso del pentagono
+    }
+
+    @Override
+    public String toString() {
+        return "\nPentagono{nlati=" + getnLati() + " , lato=" + getLato() + "}";
     }
 }

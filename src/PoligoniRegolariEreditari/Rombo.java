@@ -2,7 +2,7 @@ package PoligoniRegolariEreditari;
 
 public class Rombo extends PoligonoRegolare{
     private double dMagg, dMin;
-    public Rombo(double dMagg, double dMin) {
+    public Rombo(double dMagg, double dMin) throws Exception {
         super(4, Math.sqrt((Math.pow(dMagg / 2, 2)) + (Math.pow(dMin / 2, 2))));
         this.dMagg = dMagg;
         this.dMin = dMin;
@@ -27,9 +27,6 @@ public class Rombo extends PoligonoRegolare{
 
     @Override
     public String toString() {
-        return "Rombo{" +
-                "dMagg=" + dMagg +
-                ", dMin=" + dMin +
-                '}';
+        return "\nRombo{dMagg=" + dMagg + " , dMin=" + dMin + " , nLati=" + getnLati() + " , lato=" + getLato() + "}";
     }
 }
