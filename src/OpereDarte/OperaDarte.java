@@ -14,5 +14,11 @@ public abstract class OperaDarte {
 
     public abstract double ingombro();
 
-
+    @Override
+    public String toString() {
+        return "OperaDarte{" +
+                "titolo='" + titolo + '\'' +
+                ", artista='" + artista + '\'' +
+                '}';
+    }
 }
