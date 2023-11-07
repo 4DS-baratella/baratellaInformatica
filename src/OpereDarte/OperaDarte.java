@@ -9,16 +9,15 @@ public abstract class OperaDarte {
     }
 
     public void checkOperaDarte(OperaDarte operaDarte) throws Exception{
-
+        if(this.titolo.matches(operaDarte.titolo) && this.artista.matches(operaDarte.artista)){
+            throw new Exception("\nOpera già inserita.");
+        }
     }
 
     public abstract double ingombro();
 
     @Override
     public String toString() {
-        return "OperaDarte{" +
-                "titolo='" + titolo + '\'' +
-                ", artista='" + artista + '\'' +
-                '}';
+        return "Titolo opera: " + titolo + ", Artista: " + artista;
     }
 }
