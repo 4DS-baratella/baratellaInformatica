@@ -2,6 +2,7 @@ package OpereDarte;
 
 public class Scultura extends OperaDarte{
     private double lunghezza, larghezza, profondita;
+    private Supporto supporto;
 
     public Scultura(String titolo, String artista, double lunghezza, double larghezza, double profondita){
         super(titolo, artista);

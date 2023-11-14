@@ -23,17 +23,16 @@ public class Collezione {
         }
     }
 
-    public double stampaIngombroOpera(OperaDarte opera){
-        return opera.ingombro();
-    }
-
-    public double ingombroTotale(){
-        double ingrombroTot = 0;
-        for(int i = 0; i < dimLog; i++){
-            ingrombroTot += opereDarte[i].ingombro();
+    public double stampaIngombroOpera(OperaDarte opera) throws Exception{
+        if(opera == null){
+            throw new Exception("\nOpera d'arte nulla.");
         }
-        ingrombroTot /= 1000000;
-        return ingrombroTot;
+        for(int i = 0; i < dimLog; i++){
+            if(opereDarte[i].equals(opera)){
+                return opera.ingombro();
+            }
+        }
+        throw new Exception("\nOpera non trovata.");
     }
 
     @Override

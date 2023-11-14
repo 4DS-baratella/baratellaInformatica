@@ -8,10 +8,12 @@ public abstract class OperaDarte {
         this.artista = artista;
     }
 
-    public void checkOperaDarte(OperaDarte operaDarte) throws Exception{
-        if(this.titolo.matches(operaDarte.titolo) && this.artista.matches(operaDarte.artista)){
-            throw new Exception("\nOpera già inserita.");
+    public boolean equals(OperaDarte operaDarte){
+        boolean flag = false;
+        if(this.titolo.equals(operaDarte.titolo) && this.artista.equals(operaDarte.artista)){
+            flag = true;
         }
+        return flag;
     }
 
     public abstract double ingombro();
