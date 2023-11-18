@@ -2,6 +2,7 @@ package OpereDarte;
 
 public class Quadro extends OperaDarte{
     private double lunghezza, larghezza;
+    private Cornice cornice;
 
     public Quadro(String titolo, String artista, double lunghezza, double larghezza){
         super(titolo, artista);
