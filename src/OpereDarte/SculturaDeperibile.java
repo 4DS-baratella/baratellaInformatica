@@ -4,10 +4,14 @@ public class SculturaDeperibile extends Scultura{
     private int eta;
     private double deperibilitaMateriale;
 
-    public SculturaDeperibile(String titolo, String artista, double lunghezza, double larghezza, double profondita, int eta, double deperibilitaMateriale) throws Exception{
-        super(titolo, artista, lunghezza, larghezza, profondita);
+    public SculturaDeperibile(String titolo, String artista, double lunghezza, double larghezza, double profondita, int eta, double deperibilitaMateriale, Supporto supporto) throws Exception{
+        super(titolo, artista, lunghezza, larghezza, profondita, supporto);
         controlloEta(eta);
         controlloMateriale(deperibilitaMateriale);
+    }
+
+    public double ingombroIniziale(){
+        return super.ingombro();
     }
 
     public double ingombro(){
@@ -17,11 +21,11 @@ public class SculturaDeperibile extends Scultura{
 
     @Override
     public String toString() {
-        return "Scultura Deperibile[" +
+        return "\nScultura Deperibile[" +
                 "\n" + super.toString() +
                 "\nDimensioni scultura: " + super.getLunghezza() + "cm x " + super.getLarghezza() + "cm x " + super.getProfondita() + "cm" +
                 "\nDimensioni supporto: " + super.getDimSupporto() +
-                "\nPer un ingombro totale di: " + ingombro() + "cm^3]";
+                "\nPer un ingombro totale di: " + ingombro() + "cm^3]\n";
     }
 
     private void controlloEta(int eta) throws Exception{

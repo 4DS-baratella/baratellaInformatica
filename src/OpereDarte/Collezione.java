@@ -28,7 +28,7 @@ public class Collezione {
             throw new Exception("\nOpera d'arte nulla.");
         }
         for(int i = 0; i < dimLog; i++){
-            if(opereDarte[i].equals(opera)){
+            if(!(opereDarte[i].equals(opera))){
                 return opera.ingombro();
             }
         }
@@ -37,7 +37,7 @@ public class Collezione {
 
     @Override
     public String toString() {
-        return "Collezione[Nome collezione: " + nome + ", luogo dove si trova: " + luogo + ", opere d'arte della collezione: " + toStringOpere() + "\n]";
+        return "\nCollezione[Nome collezione: " + nome + ", luogo dove si trova: " + luogo + ", opere d'arte della collezione: " + toStringOpere() + "\n]";
     }
 
     private String toStringOpere(){

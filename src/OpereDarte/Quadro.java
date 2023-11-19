@@ -4,14 +4,15 @@ public class Quadro extends OperaDarte{
     private double lunghezza, larghezza;
     private Cornice cornice;
 
-    public Quadro(String titolo, String artista, double lunghezza, double larghezza){
+    public Quadro(String titolo, String artista, double lunghezza, double larghezza, Cornice cornice){
         super(titolo, artista);
         this.lunghezza = lunghezza;
         this.larghezza = larghezza;
+        this.cornice = new Cornice(cornice);
     }
 
     public double ingombro(){
-        return lunghezza * larghezza;
+        return (lunghezza * larghezza) + cornice.ingombro();
     }
 
     public double getLunghezza() {
@@ -24,6 +25,9 @@ public class Quadro extends OperaDarte{
 
     @Override
     public String toString() {
-        return "Quadro[" + super.toString() + ", Dimensioni: " + lunghezza + "cm x " + larghezza + "cm, per un ingombro totale di: " + ingombro() + "cm^2]";
+        return "\nQuadro[" + super.toString() +
+                ", Dimensioni quadro: " + lunghezza + "cm x " + larghezza + "cm" +
+                ", Dimensioni cornice: " + cornice.getLunghezza() + "cm x " + cornice.getLarghezza() + "cm x " + cornice.getProfondita() + "cm" +
+                ", Per un ingombro totale di: " + ingombro() + "cm^2]";
     }
 }

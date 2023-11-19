@@ -13,9 +13,9 @@ public class Supporto {
     }
 
     public Supporto(Supporto supp){
-        this.lunghezza = supp.lunghezza;
-        this.larghezza = supp.larghezza;
-        this.profondita = supp.profondita;
+        this.lunghezza = supp.getLunghezza();
+        this.larghezza = supp.getLarghezza();
+        this.profondita = supp.getProfondita();
     }
 
     public double ingombro(){
@@ -36,7 +36,7 @@ public class Supporto {
 
     @Override
     public String toString() {
-        return "\nDimensioni supporto[lunghezza: " + lunghezza + " | larghezza: " + larghezza + " | profondità: " + profondita;
+        return "\nDimensioni supporto[lunghezza: " + this.lunghezza + " | larghezza: " + this.larghezza + " | profondità: " + this.profondita;
     }
 
     private void checkDim(int dim) throws Exception{

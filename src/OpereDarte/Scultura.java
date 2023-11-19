@@ -34,10 +34,9 @@ public class Scultura extends OperaDarte{
 
     @Override
     public String toString() {
-        return "Scultura[" +
-                "\n" + super.toString() +
-                "\nDimensioni scultura: " + lunghezza + "cm x " + larghezza + "cm x " + profondita + "cm" +
-                "\nDimensioni supporto: " + supporto.getLunghezza() + "cm x " + supporto.getLarghezza() + "cm x " + supporto.getProfondita() + "cm" +
-                "\nPer un ingombro totale di: " + ingombro() + "cm^3]";
+        return "\nScultura[" + super.toString() +
+                ", Dimensioni scultura: " + lunghezza + "cm x " + larghezza + "cm x " + profondita + "cm" +
+                ", Dimensioni supporto: " + supporto.getLunghezza() + "cm x " + supporto.getLarghezza() + "cm x " + supporto.getProfondita() + "cm" +
+                ", Per un ingombro totale di: " + ingombro() + "cm^3]";
     }
 }
