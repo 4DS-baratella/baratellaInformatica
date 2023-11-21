@@ -1,7 +1,5 @@
 package OpereDarte;
 
-import java.time.DateTimeException;
-
 public class Test {
     public static void main(String[] args) {
         try{
@@ -32,7 +30,7 @@ public class Test {
             System.out.println(collezione1.toString());
 
             //Creazione opera deperibile
-            SculturaDeperibile sculturaDeperibile1 = new SculturaDeperibile("Banana", "Maruzio Cattelan", 5, 3, 2, 1, 3 ,supporto2);
+            SculturaDeperibile sculturaDeperibile1 = new SculturaDeperibile("Banana", "Maurizio Cattelan", 5, 3, 2, 1, 3 ,supporto2);
 
             //Stampa opera deperibile
             System.out.println("\nIngombro opera deperibile appena creata: " + sculturaDeperibile1.ingombroIniziale() + "cm^3");
