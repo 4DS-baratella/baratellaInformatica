@@ -1,6 +1,4 @@
-package StudenteClasse;
-
-import java.util.Locale;
+package ClasseStudente;
 
 public class Studente {
     private String nome, cognome;
