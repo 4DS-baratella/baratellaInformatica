@@ -1,5 +1,7 @@
 package Studente;
 
+import java.util.Objects;
+
 public class Persona {
     private String cognome, nome, codFisc;
     protected int numIstanze;
@@ -42,10 +44,18 @@ public class Persona {
     }
 
     public boolean verificaOmonimia(Persona pers) throws Exception{
-        if(cognome.equals(pers.getCognome()) && nome.equals(pers.getNome()) && codFisc.equals(pers.getCodFisc())){
-            throw new Exception("\nPersona già inserita.");
+        return this.equals(pers);
+    }
+
+    public boolean equals(Object ogg){
+        boolean flag = false;
+        if(ogg instanceof Persona){
+            Persona persona = (Persona) ogg;
+            if(Objects.equals(this.getCognome(), persona.getCognome()) && Objects.equals(this.getNome(), persona.getNome()) && Objects.equals(this.getCodFisc(), persona.getCodFisc())){
+                flag = true;
+            }
         }
-        return false;
+        return flag;
     }
 
     private void controlloNominativi(String nominativo) throws Exception{

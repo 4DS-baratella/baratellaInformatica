@@ -3,11 +3,16 @@ package Studente;
 public class Studente extends Persona implements Cloneable{
 
     private String dataDiNascita;
+    private int numIstanze;
+
+    public Studente(){
+    }
 
     public Studente(String cognome, String nome, String codFisc, String dataDiNascita) throws Exception{
         super(cognome, nome, codFisc);
         controlloData(dataDiNascita);
         this.dataDiNascita = dataDiNascita;
+        numIstanze++;
     }
 
     public String getDataDiNascita() {
@@ -18,6 +23,7 @@ public class Studente extends Persona implements Cloneable{
 
     @Override
     protected Studente clone(){
+        numIstanze++;
         try{
             return (Studente) super.clone();
         }catch (CloneNotSupportedException e){
@@ -52,12 +58,13 @@ public class Studente extends Persona implements Cloneable{
 
     @Override
     protected void finalize() throws Throwable {
-        try {
+        try{
             //Pulizia del codice, come la chiusura di un file o il rilascio di una risorsa.
             System.out.println("Finalizing Studente object: " + this.toString());
-        } catch (Throwable throwable) { //Throwable è la superclasse della classe "Exception" e serve per catturare tutte le eccezioni e gli errori che potrebbero verificarsi
+            numIstanze--;
+        }catch(Throwable throwable){ //Throwable è la superclasse della classe "Exception" e serve per catturare tutte le eccezioni e gli errori che potrebbero verificarsi
             throw new Exception("\nErrore nel metodo finalize.");
-        } finally {
+        }finally{
             //Richiamare il metodo finalize della superclasse
             super.finalize();
         }
