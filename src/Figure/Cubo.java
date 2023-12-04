@@ -12,4 +12,14 @@ public class Cubo extends FiguraSolida{
     public double calcolaVolume(){
         return Math.pow(lato, 3);
     }
+
+    @Override
+    public double calcolaPerimetro(){
+        return 0;
+    }
+
+    @Override
+    public double calcolaArea(){
+        return 0;
+    }
 }

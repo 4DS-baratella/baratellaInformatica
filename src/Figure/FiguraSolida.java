@@ -1,6 +1,6 @@
 package Figure;
 
-public abstract class FiguraSolida extends FiguraGeometrica{
+public abstract class FiguraSolida extends FiguraPiana{
     public FiguraSolida(String colore){
         super(colore);
     }
