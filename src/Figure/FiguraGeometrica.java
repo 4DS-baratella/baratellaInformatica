@@ -1,5 +1,9 @@
 package Figure;
 
-public class FiguraGeometrica {
+public abstract class FiguraGeometrica {
+    private String colore;
 
+    public FiguraGeometrica(String colore){
+        this.colore = colore;
+    }
 }

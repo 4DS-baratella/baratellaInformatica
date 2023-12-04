@@ -1,6 +1,7 @@
 package Figure;
 
-public class interface PoligonoRegolare {
-    private double numFissoTriangolo, numFissoQuadrato;
-
+public interface PoligonoRegolare {
+    double numFissoTriangolo = 3;
+    double numFissoQuadrato = 4;
+    double calcolaApotema();
 }
