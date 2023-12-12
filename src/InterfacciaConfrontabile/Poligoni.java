@@ -28,7 +28,7 @@ public abstract class Poligoni implements Confrontabile{
     }
 
     public void setnLati(int nLati) throws Exception{
-        if(lato < 2){
+        if(nLati < 2){
             throw new Exception("\nIl numero di lati non può essere minore di 2.");
         }else{
             this.nLati = nLati;
