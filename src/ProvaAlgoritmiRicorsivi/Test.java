@@ -19,7 +19,7 @@ public class Test {
     }
 
     static int contaCarattere(String s, char c, int indice, int counterCarattere){
-        if(indice <= s.length()){
+        if(indice < s.length()){
             if(s.charAt(indice) == c){
                 counterCarattere++;
             }
