@@ -12,6 +12,9 @@ public abstract class Aeromobile implements CMP{
     }
 
     @Override
+    public abstract boolean confrontaMaggiore(CMP x) throws Exception;
+
+    @Override
     public String toString() {
         return "sigla: " + getSigla();
     }
