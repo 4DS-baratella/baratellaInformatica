@@ -1,5 +1,5 @@
 package Aerodromo;
 
 public interface CMP {
-    boolean superiore(CMP x) throws Exception;
+    boolean confrontaMaggiore(CMP x) throws Exception;
 }

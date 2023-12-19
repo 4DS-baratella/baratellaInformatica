@@ -14,14 +14,14 @@ public class Test {
             System.out.println("\nAeromotore 1: " + aeromotore1.toString() + "\nAeromotore 2: " + aeromotore2.toString());
 
             System.out.println("\nConfronto efficienza aerodinamica aliante 1 con aliante 2: ");
-            if(aliante1.superiore(aliante2)){
+            if(aliante1.confrontaMaggiore(aliante2)){
                 System.out.println("L'efficienza aerodinamica dell'aliante 1 è MAGGIORE dell'aliante 2.");
             }else{
                 System.out.println("L'efficienza aerodinamica dell'aliante 1 è MINORE dell'aliante 2.");
             }
 
             System.out.println("\nConfronto potenza aeromotore 1 con aeromotore 2: ");
-            if(aliante2.superiore(aliante1)){
+            if(aliante2.confrontaMaggiore(aliante1)){
                 System.out.println("La potenza dell'aeromotore 1 è MAGGIORE dell'aeromotore 2.");
             }else{
                 System.out.println("La potenza dell'aeromotore 1 è MINORE dell'aeromotore 2.");

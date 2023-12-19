@@ -23,7 +23,7 @@ public class Aliante extends Aeromobile{
     }
 
     @Override
-    public boolean superiore(CMP x) throws Exception{
+    public boolean confrontaMaggiore(CMP x) throws Exception{
         boolean flag = false;
         if(x instanceof Aliante){ //in questo caso non serve fare il controllo x != null perché con instanceof verifico già che l'oggetto non sia null
             if(this.effAerodinamica > ((Aliante) x).effAerodinamica){
