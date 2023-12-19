@@ -25,8 +25,8 @@ public class Persona {
         return nome;
     }
 
-    public String getDataDiNascita() {
-        return dataDiNascita.toString();
+    public Data getDataDiNascita() {
+        return dataDiNascita;
     }
 
     public boolean verificaOmonimia(Persona persona){
@@ -37,9 +37,12 @@ public class Persona {
         return flag;
     }
 
+    /*
     public Integer calcolaEta() throws Exception {
 
     }
+
+     */
 
     public String info() throws Exception{
         String str = "";
