@@ -5,9 +5,10 @@ import java.util.Arrays;
 public class Cognome {
     public static void main(String[] args){
         try{
-            Data data1 = new Data("12/12/1212");
-            Data data2 = new Data("10/10/1010");
+            Data data1 = new Data(12, 12, 2020);
+            Data data2 = new Data(13, 12, 2020);
 
+            /*
             Persona persona1 = new Persona("Rossi", "Marco", data1);
             Persona persona2 = new Persona("Bianchi", "Mario", data2);
 
@@ -107,6 +108,10 @@ public class Cognome {
             System.out.println(studenteObj3.hashCode());
 
             System.out.println("\nVerifica ovveride metodo toString() nella classe StudenteObj" + studenteObj1.toString());
+
+             */
+
+            System.out.println("Giorni di differenza tra le due date: " + data1.differenzaInGiorni(data1, data2));
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
