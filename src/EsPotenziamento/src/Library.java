@@ -14,7 +14,7 @@ public class Library {
         for(int i = 0; i < users.length; i++){
             tmp[i] = users[i];
         }
-        tmp[users.length - 1] = user;
+        tmp[users.length] = user;
         users = new User[users.length + 1];
         users = tmp;
     }
@@ -32,7 +32,7 @@ public class Library {
         for(int i = 0; i < books.length; i++){
             tmp[i] = books[i];
         }
-        tmp[books.length - 1] = book;
+        tmp[books.length] = book;
         books = new Book[books.length + 1];
         books = tmp;
     }

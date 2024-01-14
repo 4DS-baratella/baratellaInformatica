@@ -81,48 +81,59 @@ public class Data {
 
     public Integer differenzaInGiorni(Data dataAntecedente, Data dataSuccessiva) throws Exception{
         int giorni = 0;
+        Integer annoAntecedente = dataAntecedente.getAnno();
+        Integer meseAntecedente = dataAntecedente.getMese();
+        Integer giornoAntecedente = dataAntecedente.getGiorno();
+        Integer annoSuccessivo = dataSuccessiva.getAnno();
+        Integer meseSuccessivo = dataSuccessiva.getMese();
+        Integer giornoSuccessivo = dataSuccessiva.getGiorno();
 
-        if(dataAntecedente.verificaData(dataAntecedente.toString()) && dataSuccessiva.verificaData(dataSuccessiva.toString())){
-            Integer annoAntecedente = dataAntecedente.getAnno();
-            Integer meseAntecedente = dataAntecedente.getMese();
-            Integer giornoAntecedente = dataAntecedente.getGiorno();
-            Integer annoSuccessivo = dataSuccessiva.getAnno();
-            Integer meseSuccessivo = dataSuccessiva.getMese();
-            Integer giornoSuccessivo = dataSuccessiva.getGiorno();
-            if (annoSuccessivo > annoAntecedente || (annoSuccessivo.equals(annoAntecedente) && meseSuccessivo > meseAntecedente) || (annoSuccessivo.equals(annoAntecedente) && meseSuccessivo.equals(meseAntecedente) && giornoSuccessivo >= giornoAntecedente)) {
-                for(int anno = annoAntecedente; anno < annoSuccessivo; anno++){
-                    giorni += isAnnoBisestile(anno) ? 366 : 365;
-                }
-                for(int mese = meseAntecedente; mese < meseSuccessivo; mese++){
-                    giorni += giorniInMese(annoSuccessivo, mese);
-                }
-                giorni += giornoSuccessivo - giornoAntecedente;
-            }else{
-                throw new Exception("\nLa data successiva deve essere maggiore o uguale alla precedente per calcolare i giorni.");
+        if (annoSuccessivo > annoAntecedente || (annoSuccessivo.equals(annoAntecedente) && meseSuccessivo > meseAntecedente) || (annoSuccessivo.equals(annoAntecedente) && meseSuccessivo.equals(meseAntecedente) && giornoSuccessivo >= giornoAntecedente)) {
+            for(int anno = annoAntecedente; anno < annoSuccessivo; anno++){
+                giorni += isAnnoBisestile(anno) ? 366 : 365;
             }
+            for(int mese = meseAntecedente; mese < meseSuccessivo; mese++){
+                giorni += giorniInMese(annoSuccessivo, mese);
+            }
+            giorni += giornoSuccessivo - giornoAntecedente;
+        }else{
+            throw new Exception("\nLa data successiva deve essere maggiore o uguale alla precedente per calcolare i giorni.");
         }
         return giorni;
     }
 
     public Integer differenzeInMesi(Data dataAntecedente, Data dataSuccessiva) throws Exception{
         int mesi = 0;
-        if(dataAntecedente.verificaData(dataAntecedente.data) && dataSuccessiva.verificaData(dataSuccessiva.data)){
-            Integer annoAntecedente = dataAntecedente.getAnno();
-            Integer meseAntecedente = dataAntecedente.getMese();
-            Integer annoSuccessivo = dataSuccessiva.getAnno();
-            Integer meseSuccessivo = dataSuccessiva.getMese();
-            if (annoSuccessivo > annoAntecedente || (annoSuccessivo.equals(annoAntecedente) && meseSuccessivo > meseAntecedente) || (annoSuccessivo.equals(annoAntecedente) && meseSuccessivo.equals(meseAntecedente))) {
-                for(int anno = annoAntecedente; anno < annoSuccessivo; anno++){
-                    mesi += 12;
-                }
-                for(int mese = meseAntecedente; mese < meseSuccessivo; mese++){
-                    mesi += 1;
-                }
-            }else{
-                throw new Exception("\nLa data successiva deve essere maggiore o uguale alla precedente per calcolare i giorni.");
+        Integer annoAntecedente = dataAntecedente.getAnno();
+        Integer meseAntecedente = dataAntecedente.getMese();
+        Integer annoSuccessivo = dataSuccessiva.getAnno();
+        Integer meseSuccessivo = dataSuccessiva.getMese();
+        if (annoSuccessivo > annoAntecedente || (annoSuccessivo.equals(annoAntecedente) && meseSuccessivo > meseAntecedente) || (annoSuccessivo.equals(annoAntecedente) && meseSuccessivo.equals(meseAntecedente))) {
+            for(int anno = annoAntecedente; anno < annoSuccessivo; anno++){
+                mesi += 12;
             }
+            for(int mese = meseAntecedente; mese < meseSuccessivo; mese++){
+                mesi += 1;
+            }
+        }else{
+            throw new Exception("\nLa data successiva deve essere maggiore o uguale alla precedente per calcolare i giorni.");
         }
         return mesi;
+    }
+
+    public Integer differenzaInAnni(Data dataAntecedente, Data dataSuccessiva) throws Exception{
+        int anni = 0;
+        Integer annoAntecedente = dataAntecedente.getAnno();
+        Integer annoSuccessivo = dataSuccessiva.getAnno();
+
+        if (annoSuccessivo > annoAntecedente || annoSuccessivo.equals(annoAntecedente)) {
+            for(int anno = annoAntecedente; anno < annoSuccessivo; anno++){
+                anni += 12;
+            }
+        }else{
+            throw new Exception("\nLa data successiva deve essere maggiore o uguale alla precedente per calcolare i giorni.");
+        }
+        return anni;
     }
 
     private boolean verificaData(String data) throws Exception{

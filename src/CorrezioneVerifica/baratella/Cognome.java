@@ -5,8 +5,8 @@ import java.util.Arrays;
 public class Cognome {
     public static void main(String[] args){
         try{
-            Data data1 = new Data(12, 12, 2020);
-            Data data2 = new Data(13, 12, 2020);
+            Data data1 = new Data(31, 12, 2020);
+            Data data2 = new Data(1, 1, 2021);
 
             /*
             Persona persona1 = new Persona("Rossi", "Marco", data1);
