@@ -27,10 +27,8 @@ public class Persona {
 
     public String toString() {
         String info;
-
         info = "Cognome: " + this.cognome + "\n"
                 + "Nome   : " + this.nome    + "\n";
-
         return info;
     }
 }

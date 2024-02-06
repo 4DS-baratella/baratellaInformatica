@@ -1,7 +1,10 @@
 package TipiGenerici;
 
+
+
 // Classe generica
 public class Box<T> {
+    // T serve a specificare il tipo generico
     private T t;
 
     // Costruttore senza parametri
@@ -17,8 +20,13 @@ public class Box<T> {
         return t;
     }
 
-    public void set(T t){
-        this.t = t;
+    public void set(T t) throws Exception{
+        if(t != null){
+            this.t = t;
+        }else{
+            throw new Exception("L'attributo non può essere null.");
+        }
+
     }
 
     // Restituisco il tipo dell'oggetto
