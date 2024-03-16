@@ -40,14 +40,22 @@ public class MezzoDiTrasporto {
                 throw new Exception("\nLa marca non può essere più corta di 3 lettere.");
             }
         }
-        marca.toUpperCase();
+        this.marca = marca.toUpperCase();
     }
 
     public int getNumIstanze() {
         return numIstanze;
     }
 
-    public void setNumIstanze(int numIstanze) {
-        this.numIstanze = numIstanze;
+    public int calcolaKw(){
+        return (int)(this.cavalli * COEFF_CONV_DA_CV_A_KW); //cast a int perché il coefficiente è float
+    }
+
+    public String info() throws Exception{
+        if(cavalli <= 0 && marca != null){
+            return "[Marca auto: " + this.marca + " | Cavalli: " + this.cavalli + "]";
+        }else{
+            throw new Exception("\nMancano informazioni");
+        }
     }
 }
