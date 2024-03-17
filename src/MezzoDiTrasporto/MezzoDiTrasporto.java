@@ -52,7 +52,7 @@ public class MezzoDiTrasporto {
     }
 
     public String info() throws Exception{
-        if(cavalli <= 0 && marca != null){
+        if(cavalli > 0 && marca != null){
             return "[Marca auto: " + this.marca + " | Cavalli: " + this.cavalli + "]";
         }else{
             throw new Exception("\nMancano informazioni");

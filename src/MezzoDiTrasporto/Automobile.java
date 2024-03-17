@@ -33,27 +33,37 @@ public class Automobile extends MezzoDiTrasporto{
     }
 
     public void rimuoviUltimoPasseggero(){
-
+        passeggeri.remove(3);
     }
 
     public void rimuoviPasseggero(Persona passeggero) throws Exception{
-        if(passeggeri.remove(passeggero)){
-            throw new Exception("\nPasseggero rimosso con successo.");
-        }else{
-            throw new Exception("\nPasseggero non trovato.");
-        }
+        passeggeri.remove(passeggero);
     }
 
     public void ordinaPasseggeriCrescente(){
-        Collections.sort
+        Collections.sort(passeggeri, new Comparator<Persona>(){
+            @Override
+            public int compare(Persona p1, Persona p2){
+                return Integer.compare(p1.getEta(), p2.getEta());
+            }
+        });
     }
 
-    public void ordinaPasseggeriDecrescente(){
-
+    public void ordinaPasseggeriDecrescente() {
+        Collections.sort(passeggeri, new Comparator<Persona>(){
+            @Override
+            public int compare(Persona p1, Persona p2){
+                return Integer.compare(p2.getEta(), p1.getEta());
+            }
+        });
     }
 
     @Override
-    public String toString() {
-        return "[Passeggeri automobile: " + passeggeri + "]";
+    public String toString(){
+        try{
+            return super.info() + "[Passeggeri automobile: " + passeggeri + "]";
+        }catch (Exception e){
+            return "C'è un errore nei dati forniti";
+        }
     }
 }

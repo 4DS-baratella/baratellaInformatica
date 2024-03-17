@@ -2,7 +2,7 @@ package MezzoDiTrasporto;
 
 import java.util.Objects;
 
-public class Persona {
+public class Persona{
     private String cognome, nome, codFisc;
     protected int numIstanze, eta;
 
